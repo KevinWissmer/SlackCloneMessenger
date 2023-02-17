@@ -1,0 +1,62 @@
+<mat-sidenav-container>
+    <div class="profile_wrapper" *ngIf="fs.user">
+
+    <div class="element_header" [ngStyle]="{'border-bottom': '2px solid'}">
+        <p>profile</p>
+        <span (click)="uiService.toggleProfile()" class="material-icons">close</span>
+    </div>
+
+     <div class="icon_edit" (click)="openProfileDialog()">
+        <span  class="material-icons">edit</span>
+     </div>
+    
+    
+    <img *ngIf="fs.user.image; let url" [src]="url" class="img_profile">
+    <img *ngIf="!fs.user.image" src="/assets/img/avatar.png" class="img_profile">
+
+    <h1>{{ fs.user.fullname }}</h1>
+
+    <div class="profile_element">
+        <p>My Job</p>
+
+        <p>{{ fs.user.job }}</p>
+    </div>
+    <div class="profile_element">
+        <p>Nickname</p>
+        <p>{{ fs.user.nickname }}</p>
+    </div>
+
+    <div class="profile_element">
+        <p *ngIf="fs.user.onlineState" class="online-State"><span class="dot-active"></span>active</p>
+        <p *ngIf="!fs.user.onlineState" class="online-State"><span class="dot-away"></span>away</p>
+    </div>
+
+    <div class="profile_element">
+        <p> {{ fs.user.statusText }} </p>
+    </div>
+
+    <div class="profile_element">
+        <p *ngIf="fs.user.lastTimeOnline">🕑 {{ fs.user.lastTimeOnline.toMillis() | date:'medium'}} </p>
+    </div>
+
+    <hr>
+
+    <h2>Contact</h2>
+
+    <div class="contact_element">
+        <span class="material-icons">email</span>
+        <div>
+            <p>email</p>
+
+            <p>{{ fs.user.email }}</p>
+        </div>
+    </div>
+    <div class="contact_element">
+        <span class="material-icons">phone</span>
+        <div>
+            <p>phone</p>
+            <p>{{ fs.user.phone }}</p>
+        </div>
+    </div>
+</div>
+</mat-sidenav-container>

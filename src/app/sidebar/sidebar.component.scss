@@ -1,0 +1,155 @@
+.channels {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 48px);
+    width: 100%;
+    border-right: 1px solid;
+}
+
+.hover:hover {
+    .hide {
+        display: block;
+    }
+}
+
+.hide{
+    display: none
+}
+
+mat-toolbar{
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    padding: unset !important;
+
+}
+
+.accordion_wrapper {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.sidebar_wrapper_header {
+    padding: 4px 14px 4px 14px;
+}
+
+::ng-deep .sidebar_wrapper_header span:nth-child(2) {
+    border-radius: 4px;
+    margin: 0;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+::ng-deep div.mat-expansion-panel-body {
+    padding: 0px 0px 0px 0px;
+
+}
+
+::ng-deep mat-expansion-panel {
+    box-shadow: none;
+    background-color: transparent;
+
+}
+
+.mat-expansion-panel-header {
+    height: 24px;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+    height: 24px;
+}
+
+.accordion_element {
+    margin: 0%;
+    padding: 4px 14px 4px 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.accordion_element div:nth-child(1) {
+    border-radius: 4px;
+    margin-right: 16px;
+    height: 24px;
+    width: 24px;
+
+}
+
+.hover:hover {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    cursor: pointer;
+}
+
+.sidebar_wrapper_element {
+    padding: 0;
+    box-shadow: none;
+}
+
+.h_line {
+    height: 1px;
+    margin-bottom: 16px;
+    width: 100%;
+    border: unset;
+}
+
+.elipse {
+    flex: 1;
+    max-width: calc(100% - 40px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user_img_wrapper{
+    position: relative;
+    img{
+        border-radius: 4px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        object-fit: cover;
+    }
+}
+
+
+.dot-active {
+    position: absolute;
+    bottom: 1px;
+    right: 0px;
+    height: 6px;
+    width: 6px;
+    outline: 2px solid white;
+    background-color: #007a5a;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-away {
+    position: absolute;
+    bottom: 1px;
+    right: 0px;
+    height: 6px;
+    width: 6px;
+    outline: 1px solid black;
+    background-color: rgb(245, 245, 245);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.members-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid black;
+    background-color: grey;
+    border-radius: 4px;
+    overflow: hidden;
+}

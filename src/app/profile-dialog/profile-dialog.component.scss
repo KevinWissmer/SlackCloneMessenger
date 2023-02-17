@@ -1,0 +1,39 @@
+::ng-deep .mat-form-field-infix {
+    border-top-width: 0px;
+}
+
+.mat-green {
+    background-color: #007a5a;
+    color: #fff;
+}
+
+.mat-typography {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 46px;
+
+    h4 {
+        margin: 0;
+    }
+
+    .profile-image {
+        max-height: 200px;
+        width: 170px;
+        object-fit: cover;
+    }
+
+    .ctrl-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mb-6 {
+        margin-bottom: 6px;
+    }
+
+    .img-area {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,292 @@
+.chat-main {
+    width: 100%;
+    position: relative;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(123, 123, 123, 0.5);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+.messages_wrapper {
+    max-height: calc(100% - 66px);
+    overflow: hidden;
+}
+
+.logo-centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >img {
+        position: relative;
+        animation: wiggle 4s infinite ease-in-out;
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(-20deg);
+    }
+
+    30% {
+        transform: rotate(30deg);
+    }
+
+    45% {
+        transform: rotate(-40deg);
+    }
+
+    60% {
+        transform: rotate(20deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+.messages_wrapper:hover {
+    overflow-y: scroll;
+}
+
+.chat-main-wrapper {
+    height: 100%;
+}
+
+.editor {
+    position: absolute;
+    width: 100%;
+}
+
+.upload-wrapper {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    height: 86px;
+    padding: 6px;
+    user-select: none;
+    gap: 16px;
+    box-sizing: border-box;
+    overflow: auto;
+
+    .upload-img-area {
+
+        .image-container {
+            position: relative;
+
+            .cancel {
+                position: absolute;
+                top: -12px;
+                right: -12px;
+                cursor: pointer;
+            }
+
+            img {
+                display: block;
+                border-radius: 4px;
+                box-shadow: 0 0 2px 0 grey;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.message-controller {
+    border: 1px solid #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+
+    .control-upload-img {
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .control-send-msg {
+        display: flex;
+        align-items: center;
+        border: unset;
+        padding: 4px;
+        cursor: pointer;
+        user-select: none;
+        background-color: transparent;
+
+    }
+
+    .dirty {
+        color: gray !important;
+    }
+}
+
+
+
+.message,
+.header {
+    display: flex;
+}
+
+.message {
+    margin-bottom: 20px;
+    width: 100%;
+    word-wrap: break-word;
+    padding: 6px;
+    border-radius: 4px;
+
+    &:hover {
+        backdrop-filter: brightness(80%);
+    }
+
+    .message-img-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .message-img {
+            border-radius: 4px;
+            box-shadow: 0 0 2px 0 grey;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
+    }
+
+}
+
+.message {
+    position: relative;
+}
+
+h4,
+h5 {
+    margin-block-start: unset;
+    margin-block-end: unset;
+}
+
+h4 {
+    margin-right: 5px;
+}
+
+.header {
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 10px;
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.areaHeighthigh {
+    background-color: aqua;
+}
+
+.areaHeightlow {
+    background-color: black;
+}
+
+.thread_link {
+    color: rgb(5, 5, 228);
+    cursor: pointer;
+}
+
+.thread_link:hover {
+    text-decoration: underline;
+    color: rgb(74, 74, 255);
+}
+
+.start_thread_icon_wrapper {
+    position: absolute;
+    top: 4px;
+    right: 16px;
+}
+
+.start_thread_icon {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: none;
+}
+
+.message:hover {
+    .start_thread_icon {
+        display: block;
+    }
+}
+
+
+.message_text_content {
+
+    pre {
+        white-space: pre-wrap;
+        /* Since CSS 2.1 */
+        white-space: -moz-pre-wrap;
+        /* Mozilla, since 1999 */
+        white-space: -pre-wrap;
+        /* Opera 4-6 */
+        white-space: -o-pre-wrap;
+        /* Opera 7 */
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+    }
+
+    a {
+        word-break: break-word;
+    }
+
+    p {
+        word-break: break-word;
+    }
+}

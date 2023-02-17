@@ -1,0 +1,60 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    box-shadow: 0 0 4px 0px rgb(0 0 0 / 60%);
+    display: flex;
+    flex-direction: column;
+
+    img {
+        height: 64px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .login-mail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12px;
+    
+        .mat-card-title {
+            display: block;
+            margin-bottom: 18px;
+        }
+    
+        .mat-form-field {
+            width: 100%;
+            min-width: 300px;
+        }
+    
+        .btl-login-mail {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    
+    h3 {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #cfcfcf;
+        line-height: 0.1em;
+        margin: 10px 0 10px;
+    }
+    
+    .other-auth-area {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+    }
+    
+    button {
+        margin-top: 8px;
+    }
+}
+

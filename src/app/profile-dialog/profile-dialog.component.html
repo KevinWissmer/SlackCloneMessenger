@@ -1,0 +1,50 @@
+<h2 mat-dialog-title>Change Profile</h2>
+<mat-dialog-content class="mat-typography" *ngIf="user">
+    <div class="profile-data">
+        <h4>Fullname*</h4>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="user.fullname" required>
+            <mat-error *ngIf="!user.fullname">Fullname required</mat-error>
+        </mat-form-field>
+
+        <h4>Nickname</h4>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="user.nickname">
+        </mat-form-field>
+
+        <h4>My Job</h4>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="user.job">
+        </mat-form-field>
+        
+        <h4>Email</h4>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="user.email">
+        </mat-form-field>
+
+        <h4>Phone</h4>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="user.phone">
+        </mat-form-field>
+    </div>
+    <div>
+        <h4 class="mb-6">Profile image</h4>
+        <div class="img-area">
+            <mat-spinner *ngIf="isUploading"></mat-spinner>
+            <div class="spinner-wrapper" *ngIf="!isUploading">
+                <img *ngIf="user.image; let url" [src]="url" class="profile-image mb-6">
+                <img *ngIf="!user.image" src="/assets/img/avatar.png" class="profile-image mb-6">
+            </div>
+        </div><br>
+        <input style="display: none" type="file" accept=".png,.jpg" #fileInput (change)="upload($event)" />
+        <div class="ctrl-btn">
+            <button mat-stroked-button (click)="fileInput.click()" class="mb-6">upload image</button>
+            <span *ngIf="user.image" class="span-blue" (click)="deleteImage()">delete image</span>
+        </div>
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button *ngIf="user" mat-button [disabled]="!user.fullname"    (click)="saveProfile()" color="green">Save</button>
+</mat-dialog-actions>
